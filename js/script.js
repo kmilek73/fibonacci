@@ -1,23 +1,22 @@
-let n = 10;
+let n = 0;
 
 function fibon(n) {
     if (n < 1) {
-        console.log("Liczba 0 :", "0  dla ciągu fibonacciego");
+        return 0;
     } else if (n >= 1 && n < 2) {
-        console.log("Liczba 1 :", "1  dla ciągu fibonacciego");
-    } else {
-        console.log("Liczba 0 :", "0  dla ciągu fibonacciego");
-        console.log("Liczba 1 :", "1  dla ciągu fibonacciego");
-        let pierwsza = 0;
+        return 1;
+    } else if (n > 2) {
+        let pierwsza = 1;
         let druga = 1;
+        let wynik = 0;
         for (i = 2; i < n; i++) {
-            let wynik = pierwsza + druga;
+            wynik = pierwsza + druga;
             pierwsza = druga;
             druga = wynik;
-            console.log("Liczba", i, ":", wynik, " dla ciągu fibonacciego");
+        } return wynik;
 
-        }
     }
 
 }
-fibon(n);
+
+console.log('Moja Tablica zwróciła ' + fibon(15));  
